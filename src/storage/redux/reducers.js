@@ -1,16 +1,17 @@
-import constants from "./contants";
+import constants from "./constants";
 
 const INITIAL_STATE = {
     loading: false,
     error: false,
     categoryId: 0,
-    products:[]
+    products: [],
+    categories: []
     
 }
 
 const reducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
-    case constants.SET_LODING:
+    case constants.SET_LOADING:
       return {
         ...state,
         loading: action.payload,
@@ -19,6 +20,11 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case constants.SET_ALL_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload
       };
     case constants.SET_PRODUCTS:
       return {
