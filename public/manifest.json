@@ -1,25 +1,48 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Çiçek Sepeti Case Study",
+  "name": "Çiçek Sepeti",
   "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+    {"src":"https://cdn03.ciceksepeti.com/Themes/Ciceksepeti/Assets/images/favicon-16x16.png",
+      "type": "image/png",
+      "sizes":"16x16"
+    },
+       {"src":"https://cdn03.ciceksepeti.com/Themes/Ciceksepeti/Assets/images/favicon-32x32.png",
+      "type": "image/png",
+      "sizes":"32x32"
     },
     {
-      "src": "logo192.png",
+      "src": "https://cdn03.ciceksepeti.com/Themes/Ciceksepeti/Assets/images/apple/apple-touch-icon-57x57.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "/images/icons-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#FFF",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "scope": "/",
+  "theme_color": "#FFF",
+  "shortcuts": [
+    {
+      "name": "Çiçeksepeti Case Study",
+      "short_name": "Çiçeksepeti Case Study",
+      "description": "Çiçeksepeti Frontend Developer Case Study",
+      "url": "source=pwa",
+      "icons": [{ "src": "/favicon.png", "sizes": "32x32" }]
+    }
+  ],
+  "description": "Çiçeksepeti Frontend Developer Case Study",
+  "screenshots": [
+    {
+      "src": "https://cdn03.ciceksepeti.com/Themes/Ciceksepeti/Assets/images/apple/apple-touch-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "form_factor": "narrow"
+    }
+  ]
 }

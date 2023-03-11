@@ -1,0 +1,108 @@
+@use "variables";
+
+@mixin widthAndHeight($width, $height) {
+    width: $width;
+    height: $height;
+
+}
+
+@mixin setFont($fontSize:$fontSize-M, $lineHeight, $fontStyle:normal, $fontWeight, $color, $fontFamily:Open Sans) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-family: $fontFamily;
+    color: $color;
+}
+
+@mixin setBorder($bordeSize:0, $borderType:solid, $borderColor, $borderRadius) {
+
+    border-width: $bordeSize;
+    border-color: $borderColor;
+    border-style: $borderType;
+    border-radius: $borderRadius;
+    ;
+}
+
+
+@mixin justifyItems() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@mixin mobilePortrait {
+    @media only screen and (min-width: 475px) and (max-width: 812px) and (orientation: portrait) {
+        @content
+    }
+}
+
+
+@mixin mobileLandscape {
+    @media only screen and (min-width: 568px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin tabletLandscape {
+    @media only screen and (min-width: 1024px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin tabletPortrait {
+    @media only screen and (min-width: 812px) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktopLg {
+    @media only screen and (min-width: 1500px) {
+        @content;
+    }
+}
+
+@mixin bp-xs {
+    @media only screen and (max-width: 350px) {
+        @content;
+    }
+}
+
+@mixin bp-xsmd {
+    @media only screen and (min-width: 460px) {
+        @content;
+    }
+}
+
+@mixin bp-sm {
+    @media only screen and (min-width: 568px) {
+        @content;
+    }
+}
+
+
+@mixin bp-md {
+    @media only screen and (min-width: 812px) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media only screen and (min-width: 1200px) {
+        @content;
+    }
+}
