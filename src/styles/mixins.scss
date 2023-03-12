@@ -24,10 +24,22 @@
     ;
 }
 
+@mixin setTransition ($feature, $duration) {
+        transition: $feature $duration ease-in-out,
+        color 250ms ease-in-out;
+        -webkit-transition: background-color 250ms ease-in-out,
+        color 250ms ease-in-out;
+}
 
 @mixin justifyItems() {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+@mixin justifyItemsBetween() {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 

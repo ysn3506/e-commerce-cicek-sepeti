@@ -1,0 +1,29 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
+.container-wrapper{
+    padding:0 5rem;
+    .container-title-wrapper{
+        @include mixins.justifyItems();
+        justify-content: flex-start;
+    }
+  
+    .category-title {
+        color: variables.$active-color;
+        gap: .25rem;
+    
+        .container-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+
+
+    .category-content{
+        display:grid;
+        grid-template-columns: repeat(7,1fr);
+       gap:1rem;
+    }
+
+}
+

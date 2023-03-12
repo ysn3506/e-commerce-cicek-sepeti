@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './App.scss';
+import Header from './components/header';
+import Home from './views/home';
 import { setLoading } from './storage/redux/actions';
 import { initializeApp } from './utils/helpers';
 
@@ -17,7 +19,8 @@ function App() {
   
   return (
     <div className="App">
-     
+      <Header />
+      <Home/>
     </div>
   );
 }

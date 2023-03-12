@@ -1,0 +1,44 @@
+@use "../../styles//mixins.scss";
+@use "../../styles/variables.scss";
+
+
+.button {
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 250ms ease-in-out;
+    -webkit-transition: transform 250ms ease-in-out;
+
+
+}
+
+.button:active {
+    transform: scale(0.95);
+    transition: transform 250ms ease-in-out;
+    -webkit-transition: transform 250ms ease-in-out;
+
+}
+
+
+.category-button {
+    border-radius: variables.$card-border-radius;
+    background-color: transparent;
+    border: 1px solid variables.$button-border-color;
+    color: variables.$third-font-color;
+    width: 100%;
+    height: 3.125rem;
+    max-height: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: background-color 250ms ease-in-out,
+        color 250ms ease-in-out;
+    -webkit-transition: background-color 250ms ease-in-out,
+        color 250ms ease-in-out;
+
+}
+
+.category-button:hover {
+    background-color: variables.$active-color;
+    color: variables.$sixth-font-color;
+    transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+    -webkit-transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}

@@ -1,5 +1,9 @@
+@use './styles/mixins.scss';
+
+@import './styles/main.scss';
+
+
 .App {
   text-align: center;
-  font-family: 'Merriweather',serif;
-  font-family: 'Source Sans Pro',sans-serif;
+  @include mixins.widthAndHeight(100vw, 100vh)
 }
