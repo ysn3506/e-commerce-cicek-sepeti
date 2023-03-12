@@ -12,7 +12,7 @@
     }
 
     .header-down {
-        @include mixins.widthAndHeight(100%, 5rem);
+        @include mixins.widthAndHeight(auto, 5rem);
         background-image: url('../../assets/header-mobile.png');
         background-size: 100% 100%;
         color: variables.$sixth-font-color;

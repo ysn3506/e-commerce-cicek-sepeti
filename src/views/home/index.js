@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import Container from "../../components/container";
 import Button from "../../components/button";
@@ -7,24 +7,33 @@ import "./style.scss";
 import CategoryIcon from "../../components/CategoryIcon";
 import Leaf from "../../components/leaf";
 import { setSelectedCategory } from "../../storage/redux/actions";
+import { updateProductList } from "../../utils/helpers";
+import LoadingSpinner from "../../components/loading-spinner";
 
 function Home() {
-  const { categories, categoryId, products } = useSelector((state) => state);
-  const selectedCategory = (id) => categories.find((el) => el.categoryId === id);
+  const { categories, categoryId, products,loading } = useSelector((state) => state);
+  const selectedCategory = (id) =>
+    categories.find((el) => el.categoryId === id);
 
-
-  const categoryName = selectedCategory(categoryId)?.categoryName||"Tüm Kategoriler";
+  const homeRef = useRef(null);
+  const categoryName =
+    selectedCategory(categoryId)?.categoryName || "Tüm Kategoriler";
 
   const changeCategory = (id) => {
-    const newCategoryId =
-      id === 0 || categoryId === id
-        ? 0
-        : id;
+    const newCategoryId = id === 0 || categoryId === id ? 0 : id;
     setSelectedCategory(newCategoryId);
+    updateProductList();
   };
 
+  const scrollHandler = () => {
+    const { current } = homeRef;
+    if (current) {
+          console.log(current.scrollTop, current.clientHeight,current.ScrollHeight);
+    }
+
+  }
   return (
-    <div className="home-wrapper">
+    <div className="home-wrapper" ref={homeRef} onScroll={scrollHandler}>
       <Container
         title="Kategoriler"
         titleIcon={<CategoryIcon />}
@@ -50,14 +59,17 @@ function Home() {
         ))}
       </Container>
 
-       <Container
+      <Container
         title={categoryName}
-        titleIcon={<Leaf/>}
+        titleIcon={<Leaf />}
         titleClass="product-title"
-        classes="product-content"
+        classes={`product-content ${loading && 'loading'}`}
       >
-        {products.map(el=><Card  key={el.id} item={el}/>)}
-
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          products.map((el) => <Card key={el.id} item={el} />)
+        )}
       </Container>
     </div>
   );

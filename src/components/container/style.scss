@@ -1,18 +1,19 @@
 @use '../../styles/mixins.scss';
 @use '../../styles/variables.scss';
 
-.container-wrapper{
-    padding:0 13.75rem;
-    .container-title-wrapper{
+.container-wrapper {
+    padding: 0 13.75rem 2rem;
+
+    .container-title-wrapper {
         @include mixins.justifyItems();
         justify-content: flex-start;
         gap: .25rem;
     }
-  
+
     .category-title {
         color: variables.$active-color;
- 
-    
+
+
         .container-title {
             font-size: 1.5rem;
             font-weight: 400;
@@ -20,27 +21,34 @@
     }
 
 
-    .category-content{
-        display:grid;
-        grid-template-columns: repeat(7,1fr);
-       gap:1rem;
+    .category-content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
     }
 
-    .product-title{
-     .container-title{
-            font-size:1.25rem;
+    .product-title {
+        .container-title {
+            font-size: 1.25rem;
             font-weight: 300;
-            color:variables.$third-font-color;
-     }
-    }
-    .product-content{
-        display: grid;
-        grid-template-columns: 1fr;
-        @include mixins.desktop{
-            grid-template-columns: repeat(5,1fr);
-            gap:1.875rem;
+            color: variables.$third-font-color;
         }
     }
 
-}
+    .product-content {
+        height: 100vh;
+        min-height: 50vh;
+        display: grid;
+        grid-template-columns: 1fr;
 
+        @include mixins.desktop {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.875rem;
+        }
+    }
+
+    .product-content.loading {
+        @include mixins.justifyItems();
+    }
+
+}

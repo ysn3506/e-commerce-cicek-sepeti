@@ -6,7 +6,7 @@ import {
   setLoading,
 } from "../storage/redux/actions";
 
-export const updateProductList = (page, initial = false) =>
+export const updateProductList = (page=0, initial = false) =>
   new Promise((resolve, reject) => {
    if (!initial)  setLoading(true);
     getItems(page)
