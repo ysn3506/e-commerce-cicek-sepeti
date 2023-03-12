@@ -3,14 +3,14 @@ import "./style.scss";
 import qrCodeMobile from "../../assets/qrCodeMobile.png";
 import qrCodeDesktop from "../../assets/qrCodeDesktop.png";
 import Button from "../button";
-import AppStoreButton from "../appStoreButton";
-import AndroidButton from "../googleAndroidButton";
-import ContactFormIcon from "../contactFormIcon";
-import YoutubeIcon from "../youtubeIcon";
-import FacebookIcon from "../facebookIcon";
-import TwitterIcon from "../twitterIcon";
-import InstagramIcon from "../instagramIcon";
-import Logo from "../logo";
+import AppStoreButton from "../../assets/appStoreButton";
+import AndroidButton from "../../assets/googleAndroidButton";
+import ContactFormIcon from "../../assets/contactFormIcon";
+import YoutubeIcon from "../../assets/youtubeIcon";
+import FacebookIcon from "../../assets/facebookIcon";
+import TwitterIcon from "../../assets/twitterIcon";
+import InstagramIcon from "../../assets/instagramIcon";
+import Logo from "../../assets/logo";
 
 function Footer() {
   const navItems1 = [

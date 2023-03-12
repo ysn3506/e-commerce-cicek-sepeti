@@ -1,7 +1,8 @@
 import React from "react";
 import BasketButton from "../basket/basket-button";
-import Logo from "../logo";
+import Logo from "../../assets/logo";
 import "./style.scss";
+import SearchBar from "../search-bar";
 
 function Header() {
 
@@ -9,7 +10,7 @@ function Header() {
     <div className="header wrapper">
       <div className="header-up">
               <Logo />
-              <h1>Arama Çubuğu</h1>
+              <SearchBar/>
               <BasketButton/>
             
       </div>
