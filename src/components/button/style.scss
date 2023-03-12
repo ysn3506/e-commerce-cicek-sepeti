@@ -36,9 +36,17 @@
 
 }
 
-.category-button:hover {
-    background-color: variables.$active-color;
+.category-button:hover, .category-button.active {
     color: variables.$sixth-font-color;
     transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
     -webkit-transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+
+.category-button:hover{
+    background-color: variables.$fifth-font-color;
+}
+
+.category-button.active {
+    background-color: variables.$active-color;
 }
