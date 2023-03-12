@@ -2,7 +2,7 @@
 @use '../../styles/variables.scss';
 
 .container-wrapper {
-    padding: 0 13.75rem 1rem;
+    padding: 0 13.75rem 2rem;
 
     .container-title-wrapper {
         @include mixins.justifyItems();
@@ -50,4 +50,16 @@
         @include mixins.justifyItems();
     }
 
+    .campaign{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:1.25rem;
+    }
+
+}
+
+.container-wrapper.campaign{
+    border-top:1px solid variables.$button-border-color;
+    padding-top:2rem;
+    padding-bottom:6.8rem;
 }

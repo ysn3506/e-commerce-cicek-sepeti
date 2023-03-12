@@ -1,0 +1,56 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
+.campaign-card-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1.54fr;
+    padding:10px;
+    border-radius: variables.$card-border-radius;
+    color:variables.$third-font-color;
+    gap:35px;
+    justify-content: center;
+    align-items: center;
+    height: 9.5rem;
+    position: relative;
+    .campaign-card-image-wrapper{
+        @include mixins.widthAndHeight(100%,100%);
+        @include mixins.justifyItems();
+        img{
+            width:100%;
+            height: 100%;
+        }
+    }
+    .campaign-content{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size:1.5rem;
+    gap:1rem;
+
+        p{
+            margin:0;
+            text-align: left;
+        }
+.campaign-button{
+    background-color: variables.$base-color;
+    color:variables.$campaign-font-color;
+    border-radius:15px;
+    padding:.45rem 1rem;
+    border:none
+}
+
+    }
+}
+
+.campaign-card-wrapper.pink{
+    background-color: variables.$campaign-shipment-bg-color;
+}
+
+.campaign-card-wrapper.blue {
+    background-color: variables.$campaign-gift-bg-color;
+}
+
+.campaign-card-wrapper.green {
+    background-color: variables.$campaign-stationer-bg-color;
+}

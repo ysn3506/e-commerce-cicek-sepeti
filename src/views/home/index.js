@@ -9,6 +9,7 @@ import Leaf from "../../assets/leaf";
 import { setSelectedCategory } from "../../storage/redux/actions";
 import { updateProductList } from "../../utils/helpers";
 import LoadingSpinner from "../../components/loading-spinner";
+import CampaignCard from "../../components/campaign-card";
 
 function Home() {
   const { categories, categoryId, products,loading } = useSelector((state) => state);
@@ -63,13 +64,48 @@ function Home() {
         title={categoryName}
         titleIcon={<Leaf />}
         titleClass="product-title"
-        classes={`product-content ${loading && 'loading'}`}
+        classes={`product-content ${loading && "loading"}`}
       >
         {loading ? (
           <LoadingSpinner />
         ) : (
           products.map((el) => <Card key={el.id} item={el} />)
         )}
+      </Container>
+      <Container classes="campaign">
+        <CampaignCard
+          images={{
+            big: "https://res.cloudinary.com/durtbp9be/image/upload/v1678532307/ciceksepeti/campaign/Rectangle_4012_2x_dzfgl4.png",
+            small:
+              "https://res.cloudinary.com/durtbp9be/image/upload/v1678532307/ciceksepeti/campaign/Rectangle_4012_nwcaur.png",
+          }}
+          classes="pink"
+          buttonContent="Detaylı Bilgi"
+        >
+          <p>75 TL Üzerine Teslimat Ücreti Bizden</p>
+        </CampaignCard>
+        <CampaignCard
+          images={{
+            big: "https://res.cloudinary.com/durtbp9be/image/upload/v1678532308/ciceksepeti/campaign/Rectangle_4013_2x_dk0a2m.png",
+            small:
+              "https://res.cloudinary.com/durtbp9be/image/upload/v1678532308/ciceksepeti/campaign/Rectangle_4013_rlzxun.png",
+          }}
+          classes="blue"
+          buttonContent="Hediye Ürünleri"
+        >
+          <p>Hediye Kategorisi için Sepette %15 İndirim</p>
+        </CampaignCard>
+        <CampaignCard
+          images={{
+            big: "https://res.cloudinary.com/durtbp9be/image/upload/v1678532308/ciceksepeti/campaign/Rectangle_4013-1_2x_i1zrqv.png",
+            small:
+              "https://res.cloudinary.com/durtbp9be/image/upload/v1678532308/ciceksepeti/campaign/Rectangle_4013-1_axiju5.png",
+          }}
+          classes="green"
+          buttonContent="Detaylı Bilgi"
+        >
+          <p>Hediye Kategorisi için Sepette %15 İndirim</p>
+        </CampaignCard>
       </Container>
     </div>
   );

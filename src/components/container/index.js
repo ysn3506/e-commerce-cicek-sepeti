@@ -4,7 +4,7 @@ import './style.scss';
 
 function Container({ title, titleIcon, titleClass, classes, children }) {
   return (
-    <div className="container-wrapper">
+    <div className={`container-wrapper ${classes}`}>
       <div className={`container-title-wrapper ${titleClass}`}>
         {titleIcon}
         <h2 className="container-title">{title} </h2>
