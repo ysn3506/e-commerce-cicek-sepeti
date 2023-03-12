@@ -1,0 +1,144 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/variables.scss';
+
+.footer-wrapper {
+    background-color: variables.$second-color;
+    padding: 5rem;
+    min-height: 1000px;
+    position: relative;
+
+    @include mixins.desktop {
+        padding: 2rem 13.75rem 0;
+    }
+
+    .footer-up {
+        display: flex;
+        align-items: flex-end;
+        min-height: 330px;
+        height: max-content;
+
+
+        .mobile {
+            @include mixins.justifyItems();
+            background-color: variables.$base-color;
+            border-radius: 111px;
+            align-items: flex-end;
+            @include mixins.widthAndHeight(100%, 222px);
+            overflow-y: visible;
+            gap: .5rem;
+
+            img {
+                width: 22.5rem;
+                height: 22.5rem;
+            }
+
+            .mobile-info {
+                padding: 2rem;
+
+                .mobile-info-1 {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.75rem;
+                    text-align: left;
+
+                    img {
+                        width: 3.75rem;
+                        height: 3.75rem;
+                    }
+
+                    div {
+                        padding-bottom: 1rem;
+                    }
+                }
+
+                .mobile-info-2 {
+                    @include mixins.justifyItems();
+                    gap: 2rem;
+
+                    .button {
+                        border: none;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-middle {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: 6.25rem 0;
+
+        .social-media {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 1.5rem;
+            padding-right: 3.75rem;
+            border-right: 1px dotted #9B9B9B;
+
+            .social-media-buttons {
+                display: flex;
+                gap: 2rem;
+
+                button {
+                    padding: 0;
+                    border: none;
+
+                }
+            }
+        }
+
+        .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            padding-left: 3.75rem;
+
+
+            .footer-nav-item {
+                h4 {
+                    color: variables.$active-color;
+                    text-align: center;
+                    font-size: 1.125rem;
+                    font-weight: 400;
+                    margin-top: 0
+                }
+
+                ul {
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        margin-bottom: .6rem;
+
+                        a {
+                            color: inherit;
+                            text-decoration: none;
+                            line-height: 1;
+
+                            font-size: .9rem;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-explanation {
+        font-size: .9rem;
+        color: inherit;
+        padding-bottom: 3rem;
+    }
+
+    .footer-band {
+        position: absolute;
+        bottom: 0;
+        background-color: #e6e6e6;
+        @include mixins.widthAndHeight(100%, 60px);
+        @include mixins.justifyItems();
+        margin-left: -13.75rem;
+    }
+}
