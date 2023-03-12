@@ -2,7 +2,7 @@
 @use '../../styles/variables.scss';
 
 .container-wrapper {
-    padding: 0 13.75rem 2rem;
+    padding: 0 13.75rem 1rem;
 
     .container-title-wrapper {
         @include mixins.justifyItems();
@@ -36,7 +36,6 @@
     }
 
     .product-content {
-        height: 100vh;
         min-height: 50vh;
         display: grid;
         grid-template-columns: 1fr;

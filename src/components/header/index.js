@@ -9,10 +9,9 @@ function Header() {
   return (
     <div className="header wrapper">
       <div className="header-up">
-              <Logo />
-              <SearchBar/>
-              <BasketButton/>
-            
+        <Logo />
+        <SearchBar />
+        <BasketButton />
       </div>
       <div className="header-down">
         <h1>ÇiçekSepeti</h1>

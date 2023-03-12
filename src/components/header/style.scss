@@ -3,15 +3,24 @@
 
 .header {
 
+
     .header-up {
         padding: 0 13.75rem;
         height: 5rem;
         @include mixins.justifyItemsBetween();
+        background-color: variables.$base-color;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1;
 
 
     }
 
+
     .header-down {
+        margin-top: 5rem;
         @include mixins.widthAndHeight(auto, 5rem);
         background-image: url('../../assets/header-mobile.png');
         background-size: 100% 100%;
@@ -22,6 +31,7 @@
             width: 100%;
             font: normal normal normal 35px/15px Source Sans Pro;
             letter-spacing: 0px;
+            margin: 0;
         }
 
         padding:0;
@@ -30,7 +40,7 @@
         @include mixins.desktop {
             background-image: url('../../assets/header-desktop.png');
             text-align: left;
-            padding:0 13.75rem;
+            padding: 0 13.75rem;
         }
     }
 }

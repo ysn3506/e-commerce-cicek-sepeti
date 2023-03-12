@@ -1,4 +1,4 @@
-import { getCategories, getItems } from "../services/APIS";
+import { getCategories, getItems, searchItems, searchQuery } from "../services/APIS";
 import {
   setItems,
   setAllCategories,
@@ -19,6 +19,44 @@ export const updateProductList = (page=0, initial = false) =>
       })
       .catch((err) => {
        if (!initial) setLoading(false);
+        setError(true);
+        reject();
+        throw err;
+      });
+  });
+
+  export const updateProductsFromSearch= (keyword, page = 0) =>
+    new Promise((resolve, reject) => {
+      setLoading(true);
+      searchItems(keyword,page)
+        .then((resp) => {
+          setItems(resp.data);
+        })
+        .then(() => {
+          setLoading(false);
+          resolve();
+        })
+        .catch((err) => {
+          setLoading(false);
+          setError(true);
+          reject();
+          throw err;
+        });
+    });
+
+export const querySearchResults = (keyword, page = 0) =>
+  new Promise((resolve, reject) => {
+    setLoading(true);
+    searchQuery(keyword, page)
+      .then((resp) => {
+        setItems(resp.data);
+      })
+      .then(() => {
+        setLoading(false);
+        resolve();
+      })
+      .catch((err) => {
+        setLoading(false);
         setError(true);
         reject();
         throw err;

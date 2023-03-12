@@ -3,11 +3,17 @@ import { store } from "../storage/store";
 
 export const getItems = (page = 0) => {
   const { categoryId } = store.getState();
-   const path =
-     categoryId === 0
-       ? `/products?_page=${page}&&_limit=20`
-       : `/products?categoryId=${categoryId}&_page={page}&_limit=20`;
+  const path =
+    categoryId === 0
+      ? `/products?_page=${page}&&_limit=20`
+      : `/products?categoryId=${categoryId}&_page={page}&_limit=20`;
   return API.get(path);
 };
 
-export const getCategories = () =>  API.get("/categories");
+export const getCategories = () => API.get("/categories");
+
+export const searchItems = (keyword, page = 0) =>
+  API.get(`/products?description_like=${keyword}&_page=${page}_limit=20`);
+
+export const searchQuery = (keyword, page = 0) =>
+  API.get(`/products?q=${keyword}&_page=${page}_limit=20`);
