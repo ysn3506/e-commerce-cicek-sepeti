@@ -2,15 +2,16 @@
 @use '../../styles/variables.scss';
 
 .container-wrapper{
-    padding:0 5rem;
+    padding:0 13.75rem;
     .container-title-wrapper{
         @include mixins.justifyItems();
         justify-content: flex-start;
+        gap: .25rem;
     }
   
     .category-title {
         color: variables.$active-color;
-        gap: .25rem;
+ 
     
         .container-title {
             font-size: 1.5rem;
@@ -23,6 +24,22 @@
         display:grid;
         grid-template-columns: repeat(7,1fr);
        gap:1rem;
+    }
+
+    .product-title{
+     .container-title{
+            font-size:1.25rem;
+            font-weight: 300;
+            color:variables.$third-font-color;
+     }
+    }
+    .product-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        @include mixins.desktop{
+            grid-template-columns: repeat(5,1fr);
+            gap:1.875rem;
+        }
     }
 
 }

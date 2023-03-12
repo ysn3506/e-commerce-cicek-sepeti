@@ -4,7 +4,7 @@
 .header {
 
     .header-up {
-        padding: 0 5rem;
+        padding: 0 13.75rem;
         height: 5rem;
         @include mixins.justifyItemsBetween();
 
@@ -30,7 +30,7 @@
         @include mixins.desktop {
             background-image: url('../../assets/header-desktop.png');
             text-align: left;
-            padding:0 5rem;
+            padding:0 13.75rem;
         }
     }
 }

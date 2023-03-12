@@ -2,19 +2,24 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Container from "../../components/container";
 import Button from "../../components/button";
+import Card from "../../components/card";
 import "./style.scss";
 import CategoryIcon from "../../components/CategoryIcon";
+import Leaf from "../../components/leaf";
 import { setSelectedCategory } from "../../storage/redux/actions";
 
 function Home() {
-  const { categories, categoryId } = useSelector((state) => state);
+  const { categories, categoryId, products } = useSelector((state) => state);
+  const selectedCategory = (id) => categories.find((el) => el.categoryId === id);
+
+
+  const categoryName = selectedCategory(categoryId)?.categoryName||"Tüm Kategoriler";
 
   const changeCategory = (id) => {
-    const selectedCategory = categories.find((el) => el.categoryId === id);
     const newCategoryId =
-      id === 0 || categoryId === selectedCategory.categoryId
+      id === 0 || categoryId === id
         ? 0
-        : selectedCategory.categoryId;
+        : id;
     setSelectedCategory(newCategoryId);
   };
 
@@ -43,6 +48,16 @@ function Home() {
             {el.categoryName}
           </Button>
         ))}
+      </Container>
+
+       <Container
+        title={categoryName}
+        titleIcon={<Leaf/>}
+        titleClass="product-title"
+        classes="product-content"
+      >
+        {products.map(el=><Card  key={el.id} item={el}/>)}
+
       </Container>
     </div>
   );

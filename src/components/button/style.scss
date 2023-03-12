@@ -44,9 +44,15 @@
 
 
 .category-button:hover{
-    background-color: variables.$fifth-font-color;
+    color: variables.$forth-font-color;
 }
 
 .category-button.active {
     background-color: variables.$active-color;
+
 }
+
+.category-button.active:hover{
+    color: variables.$sixth-font-color;
+}
+

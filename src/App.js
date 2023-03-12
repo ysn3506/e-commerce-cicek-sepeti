@@ -1,26 +1,25 @@
-import React, { useEffect, useRef } from 'react';
-import './App.scss';
-import Header from './components/header';
-import Home from './views/home';
-import { setLoading } from './storage/redux/actions';
-import { initializeApp } from './utils/helpers';
+import React, { useEffect, useRef } from "react";
+import "./App.scss";
+import Header from "./components/header";
+import Home from "./views/home";
+import { setLoading } from "./storage/redux/actions";
+import { initializeApp } from "./utils/helpers";
 
 function App() {
   const appRef = useRef(false);
   useEffect(() => {
-      if (appRef.current) return;
+    if (appRef.current) return;
     appRef.current = true;
     setLoading(true);
     initializeApp().then(() => {
-      setLoading(false)
+      setLoading(false);
     });
+  }, []);
 
-  }, [])
-  
   return (
     <div className="App">
       <Header />
-      <Home/>
+      <Home />
     </div>
   );
 }
