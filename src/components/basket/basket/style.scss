@@ -1,0 +1,87 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+
+.basket-wrapper {
+    @include mixins.widthAndHeight(20%, fit-content);
+    max-height: 400.25px;
+    position: absolute;
+    top:102%;
+    right: 13.5rem;
+    min-height: 300px;
+    @include mixins.setBorder(2px, solid, variables.$active-color, 2px);
+    background-color: variables.$base-color;
+    padding: 27px 27px 27px 22px;
+    box-sizing: border-box;
+    overflow: scroll;
+    min-width: 295.68px;
+    font-family: inherit;
+
+    p {
+        text-align: center;
+        width: 211.52px;
+        margin: auto;
+        color:black;
+    }
+
+    .basket-bottom {
+        position: sticky;
+        right: 0;
+        bottom: -26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mixins.widthAndHeight(100%, 84.5px);
+        background-color: variables.$base-color;
+        z-index: 2;
+
+        .shipment{
+            color:variables.$forth-font-color;
+        }
+
+        .total-price {
+            @include mixins.widthAndHeight(92px, 51.1px);
+            @include mixins.justifyItems();
+            margin-right: -11px;
+
+            @include mixins.setBorder(2px, solid, variables.$second-color, 2px);
+            @include mixins.setFont(variables.$fontSize-M, variables.$marginSize-XL, normal, 600, variables.$first-font-color);
+
+
+        }
+
+    }
+
+}
+
+
+
+.basket-wrapper.hidden {
+    height: 0;
+    display: none;
+}
+
+
+
+
+@media screen and (max-width:1439px) {
+    .basket-wrapper {
+
+        position: fixed;
+        @include mixins.widthAndHeight(296px, 338.25px);
+        box-shadow: 16px 16px 20px #1ea4ce;
+        right: 50px;
+        top: 86.64px;
+
+        .basket {
+            margin: auto 0 auto auto;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .basket-wrapper.back {
+        z-index: 2;
+    }
+
+}

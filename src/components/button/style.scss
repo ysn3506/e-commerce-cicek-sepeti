@@ -18,6 +18,18 @@
 
 }
 
+.button:disabled{
+    background-color: variables.$button-border-color;
+    color:variables.$sixth-font-color;
+    cursor:not-allowed;
+}
+
+.button:disabled:hover {
+    background-color: variables.$button-border-color;
+    color: variables.$sixth-font-color;
+    cursor: not-allowed;
+}
+
 
 .category-button {
     border-radius: variables.$card-border-radius;

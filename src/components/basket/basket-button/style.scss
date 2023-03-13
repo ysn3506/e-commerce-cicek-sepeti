@@ -11,4 +11,68 @@
     border-radius: 28px;
     font-weight: 600;
     padding:variables.$marginSize-L variables.$marginSize-XXL;
+    cursor: pointer;
+    position: relative;
+
+    .item-amount{
+        @include mixins.widthAndHeight(25px,25px);
+        border-radius: 100px;
+        background-color: #FF5B4D;
+        position:absolute;
+        right:-4px;
+        top:-8px;
+        @include mixins.justifyItems();
+    }
+
+    .shipment-warning{
+        @include mixins.widthAndHeight(343px,69px);
+        display: flex;
+        flex-direction: column;
+        padding:1rem;
+        gap:0.7rem;
+        border-radius: 10px;
+        position:absolute;
+        top:125%;
+        right:0;
+        background-color: variables.$popup-bg-color;
+        .amount{
+            display: flex;
+            gap:.25rem;
+            align-items: center;
+            span{
+                color:#ffce02;
+                font-weight: 600;
+            }
+            .free-span{
+                margin-left:calc(8px + .25rem);
+            }
+        }
+        .progress{
+            width:calc(100% - 8px - .25rem);
+            height: 5px;
+            background: #D01D32;
+            border-radius: 22px;
+            margin-left:calc(8px + .25rem);
+            position: relative;
+            .progress-active{
+                position: absolute;
+                width:50%;
+                height: 100%;
+                background: #FFCE00;
+                border-radius: 22px;
+            }
+        }
+    }
+    
+    .shipment-warning::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        /* At the top of the tooltip */
+        right: 15%;
+        margin-left: -5px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent variables.$popup-bg-color transparent;
+    }
 }

@@ -5,11 +5,14 @@ const INITIAL_STATE = {
     error: false,
     categoryId: 0,
     products: [],
-    categories: []
+    categories: [],
+    searchedKeyword: "",
+  paginationIndex: 1,
+    totalProductAmount:0,
     
 }
 
-const reducer = (state = INITIAL_STATE, action = {}) => {
+export const itemsReducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
     case constants.SET_LOADING:
       return {
@@ -31,14 +34,28 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         ...state,
         products: action.payload,
       };
+    case constants.SET_TOTAL_PRODUCT_AMOUNT:
+      return {
+        ...state,
+        totalProductAmount: action.payload,
+      }
+    case constants.SET_SEARCH_KEYWORD:
+      return {
+        ...state,
+        searchedKeyword: action.payload,
+      };
     case constants.SET_CATEGORY:
       return {
         ...state,
         categoryId: action.payload,
       };
+    case constants.SET_PAGINATION_INDEX:
+      return {
+        ...state,
+        paginationIndex:action.payload,
+      }
     default:
       return state;
   }
 };
 
-export default reducer;

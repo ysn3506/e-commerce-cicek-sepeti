@@ -25,7 +25,7 @@ function CampaignCard({images,children, classes, buttonContent}) {
 
 CampaignCard.propTypes = {
     images: PropTypes.object,
-    children: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
     classes: PropTypes.string,
     buttonContent:PropTypes.string
 }

@@ -3,13 +3,16 @@ import BasketButton from "../basket/basket-button";
 import Logo from "../../assets/logo";
 import "./style.scss";
 import SearchBar from "../search-bar";
+import Button from "../button";
 
 function Header() {
-
   return (
     <div className="header wrapper">
       <div className="header-up">
-        <Logo />
+        <Button classes="logo" clickHandler={()=>history.go("/")}>
+          <Logo />
+        </Button>
+
         <SearchBar />
         <BasketButton />
       </div>

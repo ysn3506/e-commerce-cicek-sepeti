@@ -11,8 +11,7 @@
     justify-content: center;
     align-items: center;
     @include mixins.widthAndHeight(auto, auto);
-    transform: scale(1);
-    @include mixins.setTransition(transform, 250ms );
+
 
     .card-image {
         height: 244px;
@@ -107,6 +106,4 @@
 
 .card-container:hover{
     box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-    transform: scale(1.01);
-    @include mixins.setTransition(transform, 250ms);
 }

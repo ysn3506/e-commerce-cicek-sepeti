@@ -5,5 +5,6 @@
 
 .App {
   text-align: center;
-  @include mixins.widthAndHeight(100vw, auto)
+  @include mixins.widthAndHeight(100vw, auto);
+  overflow-y: scroll;
 }

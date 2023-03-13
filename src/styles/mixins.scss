@@ -6,7 +6,7 @@
 
 }
 
-@mixin setFont($fontSize:$fontSize-M, $lineHeight, $fontStyle:normal, $fontWeight, $color, $fontFamily:Open Sans) {
+@mixin setFont($fontSize:$fontSize-M, $lineHeight, $fontStyle:normal, $fontWeight, $color, $fontFamily:inherit) {
     font-size: $fontSize;
     line-height: $lineHeight;
     font-style: $fontStyle;

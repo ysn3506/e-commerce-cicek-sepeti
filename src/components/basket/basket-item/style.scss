@@ -1,0 +1,51 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.basket-item {
+    @include mixins.justifyItems();
+    justify-content: space-around;
+    @include mixins.widthAndHeight(100%, auto);
+    min-height: 40.88px;
+    @include mixins.setFont(variables.$fontSize-M, 18px, normal, 600, variables.$second-font-color);
+    border-bottom: 1.02px solid #F4F4F4;
+    padding: 16.35px 0 18.39px;
+
+    .item-details {
+        text-align: left;
+        width: 114px;
+
+        span {
+            display: block;
+        }
+
+        .name {
+            color: variables.$first-font-color;
+            font-weight: 400;
+            margin-bottom: 4.08px;
+        }
+
+    }
+
+    .counter {
+        @include mixins.justifyItems();
+        margin-right: -15px;
+
+        button {
+            background-color: transparent;
+            @include mixins.setFont(variables.$fontSize-M, 18px, normal, 600, variables.$second-font-color);
+            border: none;
+            @include mixins.widthAndHeight(auto, auto);
+            margin: 11px;
+        }
+
+        div {
+            @include mixins.justifyItems();
+            @include mixins.widthAndHeight(32px, 32px);
+            background-color: variables.$second-color;
+            @include mixins.setFont(variables.$fontSize-L, variables.$fontSize-XL, normal, 700, variables.$first-font-color);
+
+
+        }
+
+    }
+}
