@@ -5,6 +5,7 @@ import Home from "./views/home";
 import Footer from "./components/footer";
 import { setLoading } from "./storage/redux/items/actions";
 import { initializeApp } from "./utils/helpers";
+import ErrorBoundary from "./components/error-boundary";
 
 function App() {
   const appRef = useRef(false);
@@ -19,12 +20,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <div>
+      <ErrorBoundary>
+        <Header />
+        <div>
           <Home />
-      </div>
-    
-      <Footer/>
+        </div>
+        <Footer />
+      </ErrorBoundary>
     </div>
   );
 }

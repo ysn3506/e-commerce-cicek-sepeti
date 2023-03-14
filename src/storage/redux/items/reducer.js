@@ -1,16 +1,15 @@
 import constants from "./constants";
 
 const INITIAL_STATE = {
-    loading: false,
-    error: false,
-    categoryId: 0,
-    products: [],
-    categories: [],
-    searchedKeyword: "",
+  loading: false,
+  error: false,
+  categoryId: 0,
+  products: [],
+  categories: [],
+  searchedKeyword: "",
   paginationIndex: 1,
-    totalProductAmount:0,
-    
-}
+  totalProductAmount: 0,
+};
 
 export const itemsReducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
@@ -27,7 +26,7 @@ export const itemsReducer = (state = INITIAL_STATE, action = {}) => {
     case constants.SET_ALL_CATEGORIES:
       return {
         ...state,
-        categories: action.payload
+        categories: action.payload,
       };
     case constants.SET_PRODUCTS:
       return {
@@ -38,7 +37,7 @@ export const itemsReducer = (state = INITIAL_STATE, action = {}) => {
       return {
         ...state,
         totalProductAmount: action.payload,
-      }
+      };
     case constants.SET_SEARCH_KEYWORD:
       return {
         ...state,
@@ -52,10 +51,9 @@ export const itemsReducer = (state = INITIAL_STATE, action = {}) => {
     case constants.SET_PAGINATION_INDEX:
       return {
         ...state,
-        paginationIndex:action.payload,
-      }
+        paginationIndex: action.payload,
+      };
     default:
       return state;
   }
 };
-

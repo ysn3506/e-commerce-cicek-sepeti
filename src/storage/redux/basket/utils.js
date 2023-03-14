@@ -31,4 +31,3 @@ export const removeItemFromBasket = (basketItems, basketItemToRemove) => {
       : basketItem
   );
 };
-

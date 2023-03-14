@@ -26,8 +26,6 @@
             }
         }
 
-
-
         @include mixins.mobileLandscape {
             .search-bar-wrapper {
                 order: 2;
@@ -52,12 +50,13 @@
             }
         }
 
-        @include mixins.tabletPortrait{
+        @include mixins.tabletPortrait {
             @include mixins.justifyItemsBetween();
-                height: 7rem;
-                padding: 2rem 30px;
-                align-items: center;
+            height: 7rem;
+            padding: 2rem 30px;
+            align-items: center;
             gap: 1rem;
+
             .search-bar-wrapper {
                 order: 0;
                 width: 65%;
@@ -122,7 +121,8 @@
             @include mixins.justifyItemsBetween();
             margin-top: 5rem;
         }
-        @include mixins.tabletPortrait { 
+
+        @include mixins.tabletPortrait {
             margin-top: 7rem;
         }
 

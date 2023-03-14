@@ -7,7 +7,7 @@ import "./style.scss";
 function Basket() {
   const { basketItems, hidden } = useSelector((state) => state.basket);
   const { filterHidden } = useSelector((state) => state.items);
-const totalCost = calculateBasketTotalCost();
+  const totalCost = calculateBasketTotalCost();
   return (
     <div
       className={`basket-wrapper ${hidden && "hidden"} ${
@@ -21,13 +21,11 @@ const totalCost = calculateBasketTotalCost();
           {basketItems.map((item) => (
             <BasketItem key={item.name} item={item} />
           ))}
-                      <div className="basket-bottom">
-                          <div className="shipment">
-                                {totalCost>500 && <span>Kargonuz bedava</span>}
-                          </div>
-            <div className="total-price">
-              {`₺ ${totalCost}`}
+          <div className="basket-bottom">
+            <div className="shipment">
+              {totalCost > 500 && <span>Kargonuz bedava</span>}
             </div>
+            <div className="total-price">{`₺ ${totalCost}`}</div>
           </div>
         </>
       )}

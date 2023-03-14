@@ -8,8 +8,8 @@ import Basket from "../basket";
 import { toggleBasketHidden } from "../../../storage/redux/basket/actions";
 
 function BasketButton() {
-    const dispatch = useDispatch();
-    const {basketItems, hidden} = useSelector((state) => state.basket);
+  const dispatch = useDispatch();
+  const { basketItems, hidden } = useSelector((state) => state.basket);
   const numberOfItems = basketItems.length;
   const totalPrice = basketItems.reduce(
     (acc, el) => el.price * el.quantity + acc,
@@ -18,46 +18,45 @@ function BasketButton() {
   const progressWidth =
     totalPrice / freeShippingMaxAmount > 1
       ? "100%"
-      : `${(totalPrice / freeShippingMaxAmount)*100}%`;
-    const amountToFreeShipping = (freeShippingMaxAmount - totalPrice).toFixed(0);
-    
+      : `${(totalPrice / freeShippingMaxAmount) * 100}%`;
+  const amountToFreeShipping = (freeShippingMaxAmount - totalPrice).toFixed(0);
 
-  const toggleBasketVisibility=()=>dispatch(toggleBasketHidden())
+  const toggleBasketVisibility = () => dispatch(toggleBasketHidden());
 
-    return (
-      <>
-        <div className="basket-button" onClick={toggleBasketVisibility}>
-          <img src={basketIcon} alt="basket-icon" />
-          <span>Sepetim</span>
-          {numberOfItems > 0 && (
-            <div className="item-amount">{numberOfItems}</div>
-          )}
-          {numberOfItems > 0 && hidden && (
-            <div className="shipment-warning">
-              <div className="amount">
-                {amountToFreeShipping > 0 ? (
-                  <>
-                    <StormIcon />
-                    <span>{amountToFreeShipping} TL</span>ürün daha ekleyin
-                    kargo bedava
-                  </>
-                ) : (
-                  <span className="free-span">Kargonuz Bedava</span>
-                )}
-              </div>
-
-              <div className="progress">
-                <div
-                  className="progress-active"
-                  style={{ width: progressWidth }}
-                ></div>
-              </div>
+  return (
+    <>
+      <div className="basket-button" onClick={toggleBasketVisibility}>
+        <img src={basketIcon} alt="basket-icon" />
+        <span>Sepetim</span>
+        {numberOfItems > 0 && (
+          <div className="item-amount">{numberOfItems}</div>
+        )}
+        {numberOfItems > 0 && hidden && (
+          <div className="shipment-warning">
+            <div className="amount">
+              {amountToFreeShipping > 0 ? (
+                <>
+                  <StormIcon />
+                  <span>{amountToFreeShipping} TL</span>ürün daha ekleyin kargo
+                  bedava
+                </>
+              ) : (
+                <span className="free-span">Kargonuz Bedava</span>
+              )}
             </div>
-          )}
+
+            <div className="progress">
+              <div
+                className="progress-active"
+                style={{ width: progressWidth }}
+              ></div>
             </div>
-            <Basket/>
-      </>
-    );
+          </div>
+        )}
+      </div>
+      <Basket />
+    </>
+  );
 }
 
 export default BasketButton;

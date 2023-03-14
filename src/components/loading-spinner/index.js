@@ -1,15 +1,15 @@
-import React from 'react';
-import './style.scss';
+import React from "react";
+import "./style.scss";
 
 function LoadingSpinner() {
-    return (
-      <div className="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    );
+  return (
+    <div className="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 }
 
 export default LoadingSpinner;

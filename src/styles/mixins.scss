@@ -25,8 +25,8 @@
 }
 
 @mixin setTransition ($feature, $duration) {
-        transition: $feature $duration ease-in-out;
-        -webkit-transition: $feature $duration ease-in-out;
+    transition: $feature $duration ease-in-out;
+    -webkit-transition: $feature $duration ease-in-out;
 }
 
 @mixin justifyItems() {

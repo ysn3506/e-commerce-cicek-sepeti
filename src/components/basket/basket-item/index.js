@@ -4,8 +4,6 @@ import { addItem, removeItem } from "../../../storage/redux/basket/actions";
 import { useDispatch } from "react-redux";
 import "./style.scss";
 
-
-
 function BasketItem({ item }) {
   const dispatch = useDispatch();
   const { price, description, quantity } = item;

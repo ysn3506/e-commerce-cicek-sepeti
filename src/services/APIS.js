@@ -15,8 +15,7 @@ export const getCategories = () => API.get("/categories");
 export const searchItems = (keyword, page = 1) =>
   API.get(`/products?description_like=${keyword}&_page=${page}_limit=20`);
 
-  export const findItem = (id) =>
-    API.get(`/products?productId=${id}`);
+export const findItem = (id) => API.get(`/products?productId=${id}`);
 
 export const searchQuery = (keyword, page = 1) =>
   API.get(`/products?q=${keyword}&_page=${page}_limit=20`);

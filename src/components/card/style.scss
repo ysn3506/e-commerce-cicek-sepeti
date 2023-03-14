@@ -5,26 +5,26 @@
 .card-container {
     @include mixins.setBorder(1px, solid, variables.$button-border-color, variables.$card-border-radius);
     padding: variables.$marginSize-L;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:.25rem;
+    gap: .25rem;
     justify-content: center;
     align-items: center;
     @include mixins.widthAndHeight(auto, auto);
 
 
     .card-image {
-        height: 244px;
+        // height: 244px;
         border-radius: variables.$card-border-radius;
 
-        @include mixins.tabletPortrait{
-                height: auto;
-                width: 100%;
+        @include mixins.tabletPortrait {
+            height: auto;
+            width: 100%;
         }
 
-        @include mixins.desktopLg{
-            height: 244px;
-            width:auto;
+        @include mixins.desktopLg {
+            // height: 244px;
+            width: auto;
         }
 
         img {
@@ -46,7 +46,7 @@
             width: 100%;
             font-weight: 600;
             text-align: left;
-           
+
         }
 
         .card-description {
@@ -54,6 +54,11 @@
             line-height: 1.05rem;
             height: 2.25rem;
             color: variables.$second-font-color;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .card-shipment {
@@ -70,50 +75,55 @@
             color: variables.$first-font-color;
         }
 
-      
+
 
     }
-    .card-button, .card-item-button {
+
+    .card-button,
+    .card-item-button {
         width: 100%;
         @include mixins.setBorder(1px, solid, variables.$button-border-color, 100px);
-        padding:5px;
+        padding: 5px;
+
         .card-button-counter {
             @include mixins.justifyItemsBetween();
-           
-    
+
+
             button {
                 background-color: #d6e6ff;
                 @include mixins.justifyItems();
                 color: variables.$active-color;
                 @include mixins.widthAndHeight(1.875rem, 1.875rem);
                 border-radius: 100px;
-                border:none;
+                border: none;
                 font-size: 1.6rem;
                 font-weight: 600;
                 text-align: center;
             }
-            button.minus{
-                padding-bottom:.4rem;
+
+            button.minus {
+                padding-bottom: .4rem;
             }
-            span{
-                color:variables.$second-font-color;
+
+            span {
+                color: variables.$second-font-color;
                 font-size: 1.4rem;
                 font-weight: 600;
             }
         }
     }
 
-    .card-item-button{
-        padding:5px;
+    .card-item-button {
+        padding: 5px;
         font-size: 1rem;
         height: 2.625rem;
         font-weight: 600;
-        color:variables.$active-color;
-        border-color:variables.$active-color;
+        color: variables.$active-color;
+        border-color: variables.$active-color;
         background-color: transparent;
     }
 }
 
-.card-container:hover{
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+.card-container:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }

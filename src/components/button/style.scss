@@ -18,10 +18,10 @@
 
 }
 
-.button:disabled{
+.button:disabled {
     background-color: variables.$button-border-color;
-    color:variables.$sixth-font-color;
-    cursor:not-allowed;
+    color: variables.$sixth-font-color;
+    cursor: not-allowed;
 }
 
 .button:disabled:hover {
@@ -46,20 +46,21 @@
     -webkit-transition: background-color 250ms ease-in-out,
         color 250ms ease-in-out;
 
-        @include mixins.desktop{
-            font-size: 1.125rem;
-            font-weight: 600;
-        }
+    @include mixins.desktop {
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
 }
 
-.category-button:hover, .category-button.active {
+.category-button:hover,
+.category-button.active {
     color: variables.$sixth-font-color;
     transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
     -webkit-transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 
-.category-button:hover{
+.category-button:hover {
     color: variables.$forth-font-color;
 }
 
@@ -68,7 +69,6 @@
 
 }
 
-.category-button.active:hover{
+.category-button.active:hover {
     color: variables.$sixth-font-color;
 }
-

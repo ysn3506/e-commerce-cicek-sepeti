@@ -7,7 +7,7 @@
     max-height: 400.25px;
     position: absolute;
     right: 15px;
-    top:calc(3.75rem + 15px);
+    top: calc(3.75rem + 15px);
     min-height: 300px;
     @include mixins.setBorder(2px, solid, variables.$active-color, 2px);
     background-color: variables.$base-color;
@@ -21,7 +21,7 @@
         text-align: center;
         width: 211.52px;
         margin: auto;
-        color:black;
+        color: black;
     }
 
     .basket-bottom {
@@ -35,8 +35,8 @@
         background-color: variables.$base-color;
         z-index: 2;
 
-        .shipment{
-            color:variables.$forth-font-color;
+        .shipment {
+            color: variables.$forth-font-color;
         }
 
         .total-price {
@@ -69,7 +69,6 @@
 
         position: fixed;
         @include mixins.widthAndHeight(296px, 338.25px);
-        box-shadow: 16px 16px 20px #1ea4ce;
         right: 50px;
         top: 86.64px;
 
@@ -79,17 +78,22 @@
     }
 }
 
-@include mixins.mobilePortrait{
+@include mixins.desktopLg{
+    .basket-wrapper {
+        right: 13.5rem;
+    }
+}
+
+@include mixins.mobilePortrait {
     .basket-wrapper.back {
         z-index: 2;
     }
 }
 
 
-@include mixins.tabletPortrait{
-    .basket-wrapper{
-
-          top:calc(4.75rem + 15px);
+@include mixins.tabletPortrait {
+    .basket-wrapper {
+        top: calc(4.75rem + 15px);
     }
-  
+
 }

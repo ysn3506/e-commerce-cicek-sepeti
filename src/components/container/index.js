@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import './style.scss';
+import PropTypes from "prop-types";
+import "./style.scss";
 
 function Container({ title, titleIcon, titleClass, classes, children }) {
   return (
@@ -15,19 +15,18 @@ function Container({ title, titleIcon, titleClass, classes, children }) {
 }
 
 Container.propTypes = {
-    title: PropTypes.string,
-    titleIcon: PropTypes.any,
-    titleClass: PropTypes.string,
-    classes: PropTypes.string,
-    children: PropTypes.any
-}
-
+  title: PropTypes.string,
+  titleIcon: PropTypes.any,
+  titleClass: PropTypes.string,
+  classes: PropTypes.string,
+  children: PropTypes.any,
+};
 
 Container.defaultProps = {
-    title: "",
-    titleIcon: undefined,
-    titleClass: "",
-    classes: "",
-    children:undefined
-}
+  title: "",
+  titleIcon: undefined,
+  titleClass: "",
+  classes: "",
+  children: undefined,
+};
 export default Container;

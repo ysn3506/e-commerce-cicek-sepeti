@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import Container from "../../components/container";
 import Button from "../../components/button";
 import Card from "../../components/card";
-import "./style.scss";
 import CategoryIcon from "../../assets/categoryIcon";
 import Leaf from "../../assets/leaf";
 import {
@@ -25,7 +24,7 @@ function Home() {
     loading,
     searchedKeyword,
     paginationIndex,
-    totalProductAmount
+    totalProductAmount,
   } = useSelector((state) => state.items);
 
   const selectedCategory = (id) =>
@@ -36,14 +35,14 @@ function Home() {
       return (
         <div className="product-title return">
           <span>
-            <span className="query-item">{searchedKeyword}</span> ile ilgili sonuçlar
+            <span className="query-item">{searchedKeyword}</span> ile ilgili
+            sonuçlar
           </span>
           <Button classes="return" clickHandler={() => changeCategory(0)}>
             Geri Dön
           </Button>
         </div>
       );
-      
     }
     return selectedCategory(categoryId)?.categoryName || "Tüm Kategoriler";
   };
@@ -57,20 +56,19 @@ function Home() {
   };
 
   const fetchMoreItems = () => {
-    if (loading||paginationIndex===-1) {
-       return;
-    }    
+    if (loading || paginationIndex === -1) {
+      return;
+    }
     setPaginationIndex(paginationIndex + 1);
     const _paginationIndex = store.getState().items.paginationIndex;
     const _searchedKeyword = store.getState().items.searchedKeyword;
-    const _totalProductAmount  = store.getState().items.totalProductAmount ;
+    const _totalProductAmount = store.getState().items.totalProductAmount;
     if (_paginationIndex >= 1 && products.length < _totalProductAmount) {
       _searchedKeyword.length > 0
         ? querySearchResults(_searchedKeyword, paginationIndex)
         : updateProductList(paginationIndex);
     }
-  }
-
+  };
 
   return (
     <div className="home-wrapper">
@@ -93,7 +91,7 @@ function Home() {
               categoryId === el.categoryId && "active"
             }`}
             clickHandler={() => changeCategory(index + 1)}
-            isDisable={searchedKeyword!==""}
+            isDisable={searchedKeyword !== ""}
           >
             {el.categoryName}
           </Button>
@@ -150,7 +148,7 @@ function Home() {
           classes="green"
           buttonContent="Detaylı Bilgi"
         >
-          <p>Hediye Kategorisi için Sepette %15 İndirim</p>
+          <p>Kırtasiye Kategorisi için Sepette %15 İndirim</p>
         </CampaignCard>
       </Container>
     </div>

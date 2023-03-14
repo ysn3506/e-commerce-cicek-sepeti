@@ -57,7 +57,7 @@
         background-color: variables.$second-color;
         border-radius: 28px;
         padding: 0;
-        box-shadow: 1px 1px 18px  rgba(0,0,0,.5);
+        box-shadow: 1px 1px 18px rgba(0, 0, 0, .5);
 
         ul {
             list-style: none;
@@ -72,33 +72,38 @@
             }
 
             li {
-                padding:0  2rem;
+                padding: 0 2rem;
                 width: 100%;
                 text-align: left;
                 height: 2.5rem;
                 @include mixins.justifyItemsBetween();
-                @include mixins.mobilePortrait{
-                        font-size: .9rem;
-                        padding:0 .75rem;
-                        :nth-child(2){
-                            text-align: right;
-                        }
-                }
-                @include mixins.tabletPortrait {
+
+                @include mixins.mobilePortrait {
                     font-size: .9rem;
                     padding: 0 .75rem;
+
                     :nth-child(2) {
                         text-align: right;
                     }
                 }
-                .category{
-                    color:variables.$active-color;
+
+                @include mixins.tabletPortrait {
+                    font-size: .9rem;
+                    padding: 0 .75rem;
+
+                    :nth-child(2) {
+                        text-align: right;
+                    }
+                }
+
+                .category {
+                    color: variables.$active-color;
                 }
             }
 
-            li:hover{
+            li:hover {
                 background-color: variables.$button-border-color;
-                cursor:pointer;
+                cursor: pointer;
             }
         }
 

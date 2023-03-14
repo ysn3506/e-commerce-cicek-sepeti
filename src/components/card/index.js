@@ -1,28 +1,28 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import Button from "../button";
-import './style.scss';
+import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem , removeItem} from "../../storage/redux/basket/actions";
+import { addItem, removeItem } from "../../storage/redux/basket/actions";
 
 function Card({ item }) {
   const dispatch = useDispatch();
-  const basketItems = useSelector(state => state.basket.basketItems)
-  const itemInBasket = basketItems.find(el => el.productId === item.productId);
-  const basketAmount=itemInBasket?itemInBasket.quantity:0
-
+  const basketItems = useSelector((state) => state.basket.basketItems);
+  const itemInBasket = basketItems.find(
+    (el) => el.productId === item.productId
+  );
+  const basketAmount = itemInBasket ? itemInBasket.quantity : 0;
 
   const incrementItem = () => {
-      dispatch(addItem(item))
-
-    }
+    dispatch(addItem(item));
+  };
   const decrementItem = () => {
-       if(basketAmount>0)   dispatch(removeItem(item));
-    } 
-    
+    if (basketAmount > 0) dispatch(removeItem(item));
+  };
+
   const addToBasket = () => {
-        incrementItem();
-    }
+    incrementItem();
+  };
   return (
     <div className="card-container">
       <div className="card-image">
@@ -63,7 +63,7 @@ function Card({ item }) {
 }
 
 Card.propTypes = {
-    item: PropTypes.object.isRequired
-}
+  item: PropTypes.object.isRequired,
+};
 
 export default Card;

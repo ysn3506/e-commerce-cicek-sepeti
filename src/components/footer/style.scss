@@ -36,12 +36,12 @@
             @include mixins.justifyItems();
             flex-direction: column;
             background-color: variables.$base-color;
-           
+
             @include mixins.widthAndHeight(100%, auto);
             overflow-y: visible;
             gap: .5rem;
             width: 100%;
-                border-radius: 28px;
+            border-radius: 28px;
 
 
             @include mixins.desktop {
@@ -52,7 +52,7 @@
                 border-radius: 111px;
             }
 
-           
+
 
             img {
                 width: 10rem;
@@ -80,10 +80,6 @@
                     gap: 1rem;
                     text-align: center;
 
-
-
-
-
                     @include mixins.desktop {
                         gap: 1.75rem;
                         text-align: left;
@@ -104,10 +100,6 @@
                     @include mixins.justifyItems();
                     gap: 1rem;
                     flex-direction: column;
-
-
-
-
 
                     @include mixins.desktop {
                         flex-direction: row;
@@ -157,8 +149,8 @@
             @include mixins.desktop {
                 justify-content: flex-start;
                 padding-right: 3.75rem;
-                    height: 100%;
-                    align-items: flex-start;
+                height: 100%;
+                align-items: flex-start;
                 text-align: left;
                 border-right: 1px dotted #9B9B9B;
             }
@@ -183,7 +175,7 @@
             padding-left: 0;
             gap: 3rem;
 
-            @include mixins.tabletPortrait{
+            @include mixins.tabletPortrait {
                 padding-left: 3.75rem;
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: unset;
@@ -232,7 +224,7 @@
         padding-bottom: 5rem;
 
         @include mixins.desktop {
-            padding:0 2rem 9rem;
+            padding: 0 2rem 9rem;
         }
 
     }
@@ -245,7 +237,7 @@
         @include mixins.justifyItems();
         margin-left: -15px;
 
-        @include mixins.tabletLandscape{
+        @include mixins.tabletLandscape {
             margin-left: -6rem;
         }
 

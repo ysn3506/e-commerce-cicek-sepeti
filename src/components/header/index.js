@@ -9,10 +9,9 @@ function Header() {
   return (
     <div className="header wrapper">
       <div className="header-up">
-        <Button classes="logo" clickHandler={()=>history.go("/")}>
+        <Button classes="logo" clickHandler={() => history.go("/")}>
           <Logo />
         </Button>
-
         <SearchBar />
         <BasketButton />
       </div>

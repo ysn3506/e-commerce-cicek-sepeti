@@ -146,7 +146,7 @@ function Footer() {
             <h4 className="footer-nav-header">Gizlilik Sözleşmesi</h4>
             <ul>
               {navItems4.map((el) => (
-                <li key={el}  className="nav-item-el">
+                <li key={el} className="nav-item-el">
                   <a href="/">{el}</a>
                 </li>
               ))}

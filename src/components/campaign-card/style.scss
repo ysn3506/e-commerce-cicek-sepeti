@@ -1,14 +1,14 @@
 @use '../../styles/mixins.scss';
 @use '../../styles/variables.scss';
 
-.campaign-card-wrapper{
+.campaign-card-wrapper {
     display: grid;
     grid-template-columns: 1fr 1.54fr;
-    padding:10px;
+    padding: 10px;
     border-radius: variables.$card-border-radius;
-    color:variables.$third-font-color;
+    color: variables.$third-font-color;
     gap: 10px;
-    
+
     justify-content: center;
     align-items: center;
     height: 9.5rem;
@@ -17,51 +17,58 @@
     @include mixins.tabletLandscape {
         gap: 1rem;
     }
-    @include mixins.desktopLg{
-gap:35px;
-    }
-    .campaign-card-image-wrapper{
-        @include mixins.widthAndHeight(100%,100%);
-        @include mixins.justifyItems();
-        img{
 
-            width:100%;
-           
+    @include mixins.desktopLg {
+        gap: 35px;
+    }
+
+    .campaign-card-image-wrapper {
+        @include mixins.widthAndHeight(100%, 100%);
+        @include mixins.justifyItems();
+
+        img {
+
+            width: 100%;
+
             @include mixins.desktop {
-                width:100%;
+                width: 100%;
                 height: 100%;
             }
-            
+
         }
     }
-    .campaign-content{
+
+    .campaign-content {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        font-size:1.5rem;
-        gap:.25rem;
+        font-size: 1.5rem;
+        gap: .25rem;
+
         @include mixins.desktop {
-            gap:1rem;
+            gap: 1rem;
+            font-size: 1.25rem;
         }
 
 
-        p{
-            margin:0;
+        p {
+            margin: 0;
             text-align: left;
         }
-.campaign-button{
-    background-color: variables.$base-color;
-    color:variables.$campaign-font-color;
-    border-radius:15px;
-    padding:.45rem 1rem;
-    border:none
-}
+
+        .campaign-button {
+            background-color: variables.$base-color;
+            color: variables.$campaign-font-color;
+            border-radius: 15px;
+            padding: .45rem 1rem;
+            border: none
+        }
 
     }
 }
 
-.campaign-card-wrapper.pink{
+.campaign-card-wrapper.pink {
     background-color: variables.$campaign-shipment-bg-color;
 }
 
