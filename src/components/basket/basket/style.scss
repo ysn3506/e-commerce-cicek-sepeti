@@ -6,8 +6,8 @@
     @include mixins.widthAndHeight(20%, fit-content);
     max-height: 400.25px;
     position: absolute;
-    top:102%;
-    right: 13.5rem;
+    right: 15px;
+    top:calc(3.75rem + 15px);
     min-height: 300px;
     @include mixins.setBorder(2px, solid, variables.$active-color, 2px);
     background-color: variables.$base-color;
@@ -64,7 +64,7 @@
 
 
 
-@media screen and (max-width:1439px) {
+@include mixins.desktop {
     .basket-wrapper {
 
         position: fixed;
@@ -79,9 +79,17 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@include mixins.mobilePortrait{
     .basket-wrapper.back {
         z-index: 2;
     }
+}
 
+
+@include mixins.tabletPortrait{
+    .basket-wrapper{
+
+          top:calc(4.75rem + 15px);
+    }
+  
 }

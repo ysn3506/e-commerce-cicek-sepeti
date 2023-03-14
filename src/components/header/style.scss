@@ -2,35 +2,110 @@
 @use "../../styles/mixins.scss";
 
 .header {
-
-
     .header-up {
-        padding: 0 13.75rem;
-        height: 5rem;
+        height: 10rem;
         @include mixins.justifyItemsBetween();
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: 1fr 1fr;
         background-color: variables.$base-color;
         position: fixed;
         top: 0;
         width: 100%;
         left: 0;
         z-index: 1;
+        padding: 15px;
 
-        .logo{
-            border:none;
+        @include mixins.mobilePortrait {
+            .search-bar-wrapper {
+                order: 2;
+                position: absolute;
+                width: calc(100% - 30px);
+                bottom: 15px;
+                margin: auto 15px;
+            }
+        }
+
+
+
+        @include mixins.mobileLandscape {
+            .search-bar-wrapper {
+                order: 2;
+                position: absolute;
+                width: calc(100% - 30px);
+                bottom: 15px;
+                margin: auto 15px;
+            }
+        }
+
+        @include mixins.tabletLandscape {
+            padding: 0 30px;
+            @include mixins.justifyItemsBetween();
+            height: 5rem;
+
+            .search-bar-wrapper {
+                order: 0;
+                width: 65%;
+                bottom: auto;
+                position: relative;
+                margin: auto;
+            }
+        }
+
+        @include mixins.tabletPortrait{
+            @include mixins.justifyItemsBetween();
+                height: 7rem;
+                padding: 2rem 30px;
+                align-items: center;
+            gap: 1rem;
+            .search-bar-wrapper {
+                order: 0;
+                width: 65%;
+                bottom: auto;
+                position: relative;
+                margin: auto;
+            }
+        }
+
+
+        @include mixins.desktopLg {
+            padding: 0 13.75rem;
+            @include mixins.justifyItemsBetween();
+            height: 5rem;
+            gap: 1rem;
+
+
+            .search-bar-wrapper {
+                order: 0;
+                width: 65%;
+                bottom: auto;
+                position: relative;
+                margin: auto;
+            }
+
+
+
+        }
+
+
+
+        .logo {
+            border: none;
             background-color: transparent;
-            width:auto;
+            width: auto;
             height: auto;
         }
     }
 
 
     .header-down {
-        margin-top: 5rem;
-        @include mixins.widthAndHeight(auto, 5rem);
+        margin-top: 10rem;
+        @include mixins.widthAndHeight(auto, 4rem);
         background-image: url('../../assets/header-mobile.png');
         background-size: 100% 100%;
         color: variables.$sixth-font-color;
         text-align: center;
+        padding: 0 15px;
 
         h1 {
             width: 100%;
@@ -42,10 +117,22 @@
         padding:0;
         @include mixins.justifyItems();
 
-        @include mixins.desktop {
+        @include mixins.tabletLandscape {
+            padding: 0 30px;
+            @include mixins.justifyItemsBetween();
+            margin-top: 5rem;
+        }
+        @include mixins.tabletPortrait { 
+            margin-top: 7rem;
+        }
+
+        @include mixins.desktopLg {
+            margin-top: 5rem;
             background-image: url('../../assets/header-desktop.png');
             text-align: left;
             padding: 0 13.75rem;
+            height: 5rem;
         }
+
     }
 }

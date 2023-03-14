@@ -17,6 +17,16 @@
         height: 244px;
         border-radius: variables.$card-border-radius;
 
+        @include mixins.tabletPortrait{
+                height: auto;
+                width: 100%;
+        }
+
+        @include mixins.desktopLg{
+            height: 244px;
+            width:auto;
+        }
+
         img {
             @include mixins.widthAndHeight(100%, 100%);
         }
